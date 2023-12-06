@@ -1,7 +1,6 @@
 from fastapi import FastAPI
+from app.presentation.product_routes import routes
+
 
 app = FastAPI()
-
-@app.get('/')
-def hello_world():
-    return "Hello world"
+app.include_router(routes)
